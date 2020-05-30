@@ -3,7 +3,7 @@ Demo for implementing a simple CI/CD pipeline at AWS ECC2 using Ansible|Jenkins|
 
 ::Steps::
 
-- Deploy 3 EC2 instances (Ansible,Jenkins & WebServer)
+- Deploy 2 EC2 instances (Ansible+Jenkins & WebServer)
 - Deploy Playbooks to set up each of the above
 - Create Pipeline in Jenkins
 - Deploy the simple-website from `https://github.com/BINPIPE/simple-website` via the simple pipeline.
