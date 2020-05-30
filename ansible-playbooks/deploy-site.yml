@@ -1,0 +1,28 @@
+---
+ - hosts: Webserver
+
+   tasks:
+
+    - name: apt-get clean
+      shell: apt-get clean
+      become: true
+      become_user: root
+
+    - name: apt-get update
+      shell: apt-get update
+      become: true
+      become_user: root
+
+    - name: ensure Apache is installed
+      apt: name=apache2 update_cache=yes
+      become: yes
+
+    - name: ensure apache2 is running
+      service: name=apache2 state=started
+
+    - name: deploy app
+      git: >
+        repo=https://github.com/BINPIPE/simple-website.git
+        dest=/var/www/html/website
+      become: true
+      become_user: root
