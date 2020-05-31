@@ -9,7 +9,7 @@ node () {
  			// Shell build step
 sh """ 
 export ANSIBLE_HOST_KEY_CHECKING=False
-cd simple-cicd-ec2/ansible-playbooks/
+cd ansible-playbooks/
 ansible-playbook -i hosts -l Webserver, deploy-site.yml 
  """ 
 	}
