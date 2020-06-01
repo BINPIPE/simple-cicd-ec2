@@ -25,7 +25,3 @@
       service: name=docker state=started
       become: true
       become_user: root
-
-    - name: run the wordpress defined in my_project's docker-compose.yml
-      docker_compose:
-        project_src: .
