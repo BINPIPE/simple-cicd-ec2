@@ -26,9 +26,9 @@
       become: true
       become_user: root
       
-    - name: Deploy wordpress from a compose file
+    - name: Deploy stack from a compose file
       docker_stack:
         state: present
-        name: wordpress
+        name: mystack
         compose:
-          - docker-compose.yml
+          - /opt/docker-compose.yml
