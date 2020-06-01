@@ -11,6 +11,7 @@ sh """
 export ANSIBLE_HOST_KEY_CHECKING=False
 cd ansible-playbooks/
 pwd
+ls -l
 ansible-playbook -i hosts -l Webserver, deploy-wordpress.yml 
  """ 
 	}
