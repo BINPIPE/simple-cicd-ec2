@@ -31,4 +31,4 @@
         state: present
         name: mystack
         compose:
-          - /opt/docker-compose.yml
+          - docker-compose.yml
