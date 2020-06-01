@@ -26,12 +26,6 @@
       become: true
       become_user: root
 
-    - name: Remove existing containers if any
-      shell: docker-compose rm -f -s
-      become: true
-      become_user: root
-      
-    - name: Start Wordpress Containers
-      shell: docker-compose run -d
-      become: true
-      become_user: root
+    - name: run the wordpress defined in my_project's docker-compose.yml
+      docker_compose:
+        project_src: .
