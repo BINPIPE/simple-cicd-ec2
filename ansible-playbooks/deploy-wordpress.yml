@@ -13,18 +13,18 @@
       become: true
       become_user: root
 
-    - name: ensure Apache is installed
+    - name: ensure Docker is installed
       apt: name=docker.io update_cache=yes
       become: yes
 
-    - name: ensure Apache is installed
+    - name: ensure Docker Compose is installed
       apt: name=docker-compose update_cache=yes
       become: yes
 
-    - name: ensure docker is running
+    - name: ensure Docker is running
       service: name=docker state=started
 
-    - name: Remove existing containers
+    - name: Remove existing containers if any
       shell: docker-compose rm -f -s
       become: true
       become_user: root
