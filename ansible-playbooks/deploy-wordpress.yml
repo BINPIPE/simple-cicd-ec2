@@ -21,7 +21,12 @@
       apt: name=docker-compose update_cache=yes
       become: yes
 
+    - name: Add jenkins to docker group
+      shell: usermod -aG docker jenkins
+      become: true
+      become_user: root
+
     - name: ensure Docker is running
       service: name=docker state=started
       become: true
-      become_user: root
+      become_user: jenkins
