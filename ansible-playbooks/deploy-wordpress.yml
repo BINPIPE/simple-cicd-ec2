@@ -28,7 +28,7 @@
       
     - name: Deploy wordpress from a compose file
       docker_stack:
-      state: present
-      name: wordpress
-      compose:
-        - docker-compose.yml
+        state: present
+        name: wordpress
+        compose:
+          - docker-compose.yml
